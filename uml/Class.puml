@@ -6,6 +6,9 @@ class Main {
     +{static}main(args:String[*])
 }
 
+class Controller {
+}
+
 class HttpClient {
     -result : String
     +request(url : String) : String
@@ -38,7 +41,7 @@ class Train {
 }
 
 HttpClient "needs"..> Request
-Main "call"--> HttpClient
-Main "stock"--> Train
+Controller "call"--> HttpClient
+Controller "stock"--> Train
 
 @enduml

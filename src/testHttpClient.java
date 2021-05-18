@@ -11,7 +11,7 @@ public class testHttpClient {
     public void test1() throws ParseException {
         HttpClient tmp = new HttpClient();
         Request req = new Request();
-        req.setDestination("bordeaux st jean");
+        //req.setDestination("bordeaux st jean");
         req.setDeparture("strasbourg");
         SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
         Date t = ft.parse("2021-05-27");
