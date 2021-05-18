@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Main {
+
+    +{static}main(args:String[*])
+}
+
+class HttpClient {
+    -result : String
+    +request(url : String) : String
+}
+
+class Request {
+    -parameters : Map<String, String>
+    -final urlHeader : String
+    +setDeparture(departure : String)
+    +setDestination(destination : String)
+    +setDateTime(date : Date)
+    +clear()
+    +getURL() : String
+}
+
+class Train {
+    -number : int
+    -type : String
+    -departure : String
+    -destination : String
+    -time : Date
+    +getNumber() : int
+    +getType() : String
+    +getDeparture() : String
+    +getDestination() : String
+    +getDate() : String
+    +getTime() : String
+    +getDateTime() : String
+    +toString() : String
+}
+
+HttpClient "needs"..> Request
+Main "call"--> HttpClient
+Main "stock"--> Train
+
+@enduml
