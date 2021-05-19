@@ -1,3 +1,7 @@
+package main.java;
+
+import main.java.HttpClient;
+import main.java.Request;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
