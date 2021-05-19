@@ -9,6 +9,9 @@ class Main {
 class Controller {
 }
 
+class Display {
+}
+
 class HttpClient {
     -result : String
     +request(url : String) : String
@@ -43,5 +46,6 @@ class Train {
 HttpClient "needs"..> Request
 Controller "call"--> HttpClient
 Controller "stock"--> Train
+Controller "call" --> Display
 
 @enduml
