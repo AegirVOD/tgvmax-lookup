@@ -8,20 +8,17 @@ public class DateParser {
 
     public static Date stringToDate_Date(String a) throws ParseException {
         SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
-        Date t = ft.parse(a);
-        return t;
+        return ft.parse(a);
     }
 
     public static Date stringToDate_Time(String a) throws ParseException {
         SimpleDateFormat ft = new SimpleDateFormat("HH:mm");
-        Date t = ft.parse(a);
-        return t;
+        return ft.parse(a);
     }
 
     public static Date stringToDate_DateTime(String a) throws ParseException {
         SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date t = ft.parse(a);
-        return t;
+        return ft.parse(a);
     }
 
     public static String dateToString_Date(Date t) {
