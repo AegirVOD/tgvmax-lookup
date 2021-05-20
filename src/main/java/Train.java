@@ -46,15 +46,13 @@ public class Train {
     }
 
     public String toString () {
-        StringBuilder res = new StringBuilder();
-        res.append("Train no.");
-        res.append(this.getNumber());
-        res.append(", destination: ");
-        res.append(this.getDestination());
-        res.append(", departure: ");
-        res.append(this.getDeparture());
-        res.append(", leaves at ");
-        res.append(this.getDateTime());
-        return res.toString();
+        return "Train no." +
+                this.getNumber() +
+                ", destination: " +
+                this.getDestination() +
+                ", departure: " +
+                this.getDeparture() +
+                ", leaves at " +
+                this.getDateTime();
     }
  }
