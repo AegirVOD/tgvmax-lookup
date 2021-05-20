@@ -1,30 +1,49 @@
 package main.java;
 
-import main.java.HttpClient;
-import main.java.Request;
+import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.Date;
 
-class container {
-
-}
-
 public class Controller {
-    private HttpClient httpClient;
-    private Request request;
+    private HttpClient httpClient = new HttpClient();
+    private Request request = new Request();
     private String jsonString;
-
-    public void init() {
-        this.httpClient = new HttpClient();
-        this.request = new Request();
-    }
+    private JsonContainer jsonContainer = new JsonContainer();
+    private Gson gson = new Gson();
+    private ArrayList<Train> trainList;
 
     public void setParameters(String departure, String destination, Date date) {
         request.setDeparture(departure);
         request.setDestination(destination);
         request.setDate(date);
+    }
+
+    public void launchSearch() {
         httpClient.request(request.getUrl());
-        jsonString = httpClient.getResult();
+        this.jsonString = httpClient.getResult();
+    }
+
+    public void parseJson() {
+        try {
+            jsonContainer = gson.fromJson(jsonString, JsonContainer.class);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void printJson() {
+        System.out.println(gson.toJson(jsonContainer));
+    }
+
+    public void getTrainList() {
+        this.trainList = jsonContainer.getTrains();
+    }
+
+    public void printTrainList() {
+        for (Train t : this.trainList)
+            System.out.println(t);
     }
 
 }
