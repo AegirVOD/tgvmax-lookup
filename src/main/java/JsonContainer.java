@@ -25,8 +25,7 @@ class Field {
     //Return Train with the data provided in Field.
     public Train getTrain() {
         try {
-            Train res = new Train(train_no, origine, destination, DateParser.stringToDate_DateTime(date + " " + heure_depart));
-            return res;
+            return new Train(train_no, origine, destination, DateParser.stringToDate_DateTime(date + " " + heure_depart));
         } catch (ParseException e) {
             e.printStackTrace();
         }
